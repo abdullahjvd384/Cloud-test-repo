@@ -1,0 +1,44 @@
+CS-4075 - Cloud Computing (BSDS - 8A, 8B) 
+Assignment # 2 
+ 
+Due Date: February 13, 2026 
+Total Marks: 100 
+ 
+ 
+ 
+Submission Guidelines: 
+Upload one ZIP file containing: 
+●  index.html 
+●  Dockerfile 
+●  deployment.yaml 
+●  service.yaml 
+●  hpa.yaml 
+●  Screenshots showing pods before and after running the load-testing script 
+●  Screenshot of kubectl get hpa 
+ 
+ 
+Design and deploy a containerized personal portfolio homepage using Docker and Kubernetes. 
+The website must be hosted using NGINX and configured with Horizontal Pod Auto Scaling 
+(HPA). 
+A load-testing script is provided below. Students are required to run the given script to generate 
+traffic and verify that auto-scaling is functioning correctly. 
+Tasks: 
+1.  Create a static portfolio homepage using HTML and CSS 
+2.  Write a Dockerfile to host the site using NGINX 
+3.  Deploy the container using Kubernetes Deployment and Service YAML 
+4.  Configure HPA to auto-scale pods based on CPU utilization 
+5.  Run the provided load-testing script and observe pod scaling 
+ 
+Load-Testing Script 
+#!/bin/bash 
+URL="http://localhost:30007" 
+REQUESTS=1000 
+ 
+for i in $(seq 1 $REQUESTS) 
+do 
+  curl -s $URL > /dev/null & 
+done 
+ 
+wait 
+echo "Load testing completed" 
+ 

@@ -1,0 +1,60 @@
+Deployment Platform  
+Use Minikube, a free local Kubernetes cluster officially supported by Kubernetes. 
+resources: 
+ https://minikube.sigs.k8s.io/docs/ 
+ 
+Docker 
+Used to containerize the portfolio website using NGINX. 
+resources: 
+https://www.docker.com/ 
+https://docs.docker.com/ 
+ 
+kubectl 
+Command-line tool used to interact with Kubernetes clusters. 
+resources: 
+https://kubernetes.io/docs/tasks/tools/ 
+ 
+Kubernetes 
+Used for container orchestration, scaling, and service management. 
+resources: 
+https://kubernetes.io/docs/home/ 
+ 
+Deployment Steps 
+1.  Build Docker image using Docker 
+ 
+2.  Start a local Kubernetes cluster using Minikube 
+3.  Deploy the application using Kubernetes Deployment and Service 
+4.  Enable Horizontal Pod Auto Scaling (HPA) 
+5.  Run the provided load-testing script 
+6.  Verify auto-scaling using kubectl get pods and kubectl get hpa 
+ 
+Horizontal Pod Auto Scaling (HPA) 
+HPA automatically adjusts the number of running pods based on CPU utilization. 
+Official HPA Documentation: 
+https://kubernetes.io/docs/tasks/run-application/horizontal-pod-autoscale/ 
+Metrics Server (required for HPA): 
+https://github.com/kubernetes-sigs/metrics-server 
+ 
+Load Testing Purpose 
+Kubernetes Scaling Concepts: https://kubernetes.io/docs/concepts/workloads/controllers/deployment/#scaling-a-deployment
+ 
+Verification Commands 
+Use the following commands for verification: 
+kubectl get pods 
+kubectl get pods -w 
+kubectl get hpa 
+ 
+These commands confirm: 
+●  Number of running pods 
+●  Scaling activity 
+●  Current vs target CPU utilization 
+ 
+ 
+ 
+Learning References  
+●  Docker Overview:   https://docs.docker.com/get-started/overview/ 
+●  Kubernetes Basics Tutorial: 
+   https://kubernetes.io/docs/tutorials/kubernetes-basics/ 
+●  Services & Networking: 
+   https://kubernetes.io/docs/concepts/services-networking/service/ 
+ 
