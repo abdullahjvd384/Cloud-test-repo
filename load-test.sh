@@ -1,5 +1,5 @@
 #!/bin/bash
-URL="http://localhost:30007"
+URL="http://127.0.0.1:59510"
 REQUESTS=1000
 for i in $(seq 1 $REQUESTS)
     do
